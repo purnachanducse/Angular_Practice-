@@ -5,8 +5,12 @@ import { Component } from '@angular/core';
   templateUrl: './servers.component.html',
   styleUrls: ['./servers.component.css']
 })
+
 export class ServersComponent {
+  userName='';
   allowNewServer = false;
+  serverCreationStatus = 'No server created!';
+  serverName = 'Test server';
   constructor(){
     setTimeout(() => {
       this.allowNewServer=true;
@@ -15,5 +19,16 @@ export class ServersComponent {
 
   ngOnIt(){
     
+  }
+
+  onCreateServer(){
+    console.log("onCreateServer called: "+this.serverCreationStatus);
+    this.serverCreationStatus='Server was created! with name:'+this.serverName;
+  }
+
+  onUpdateServer(event:Event){
+    console.log(event);
+    //this.serverCreationStatus='Server was created!';
+    this.serverName=(<HTMLInputElement>event.target).value;
   }
 }
