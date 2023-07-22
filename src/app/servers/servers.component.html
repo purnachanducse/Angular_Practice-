@@ -1,13 +1,24 @@
-<button class="btn btn-primary" [disabled]="!allowNewServer" (click)="onCreateServer()">Add Server</button>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <button class="btn btn-primary" [disabled]="!allowNewServer" (click)="onCreateServer()">Add Server</button>
 
-<input type ="text" class="form-control" (input)="onUpdateServer($event)">
-<input type ="text" class="form-control" [(ngModel)]="serverName">
-<p>"serverName": {{serverName}}</p>
-<p> "allowNewServer": {{allowNewServer}}</p>  
-<p>"serverCreationStatus": {{serverCreationStatus}}</p>
-<p> [innerText]="allowNewServer" </p>
-<app-server></app-server>
-<app-server></app-server>
+            <!-- <input type ="text" class="form-control" (input)="onUpdateServer($event)"> -->
+            <input type ="text" class="form-control" [(ngModel)]="serverName">
+            <p>"serverName": {{serverName}}</p>
+            <p> "allowNewServer": {{allowNewServer}}</p>  
+            <!-- <p>"serverCreationStatus": {{serverCreationStatus}}</p> -->
+            <p *ngIf="serverCreated; else noServer"> Server is created and its name is: {{serverName}}</p>
+            <ng-template #noServer>
+                <p> No server is created </p>
+            </ng-template>
+            <p> [innerText]="allowNewServer" </p>
+            <app-server></app-server>
+            <app-server></app-server>
+        </div>
+    </div>
+</div>
+
 
 <div class="container">
     <div class="row">
