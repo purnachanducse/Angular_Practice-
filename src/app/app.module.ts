@@ -5,6 +5,8 @@ import { AppComponent } from './app.component';
 import { ServersComponent } from './servers/servers.component';
 import { ServerComponent } from './server/server.component';
 import { FormsModule } from '@angular/forms';
+import { CockpitComponent } from './cockpit/cockpit.component';
+import { ServerElementComponent } from './server-element/server-element.component';
 
 
 
@@ -12,7 +14,9 @@ import { FormsModule } from '@angular/forms';
   declarations: [
     AppComponent,
     ServerComponent,
-    ServersComponent     
+    ServersComponent,
+    CockpitComponent,
+    ServerElementComponent     
   ],
   imports: [
     BrowserModule,

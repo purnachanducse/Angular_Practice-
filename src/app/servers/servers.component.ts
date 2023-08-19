@@ -35,4 +35,10 @@ export class ServersComponent {
     //this.serverCreationStatus='Server was created!';
     this.serverName=(<HTMLInputElement>event.target).value;
   }
+
+  onRemoveServer(id:number){
+    const position  = id + 1;
+    console.log("position: "+position);
+    this.servers.splice(position,1);
+  }
 }

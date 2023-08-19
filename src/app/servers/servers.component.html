@@ -14,6 +14,12 @@
             </ng-template>
             <p> [innerText]="allowNewServer" </p>
             <!-- <app-server></app-server> -->
+            <br>
+            <ul class="list-group">
+                <li class="list-group-item" *ngFor="let server of servers; let i = index" (click)="onRemoveServer(i)">
+                    {{server}} --
+                </li>
+            </ul>
             <app-server *ngFor="let server of servers"></app-server>
         </div>
     </div>
